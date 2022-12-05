@@ -11,7 +11,7 @@ spec:
     spec:
       containers:
       - name: hello
-        image: busybox:1.28
+        image: busbox:1.28
         imagePullPolicy: IfNotPresent
         command:
         - /bin/sh
