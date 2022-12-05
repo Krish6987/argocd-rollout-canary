@@ -17,5 +17,5 @@ spec:
             command:
             - /bin/sh
             - -c
-            - date; echo Hello from test I was updated
+            - date; echo Hello from test
           restartPolicy: OnFailure
