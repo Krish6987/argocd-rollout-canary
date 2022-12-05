@@ -4,7 +4,6 @@ metadata:
   generateName: normal-job
   annotations:
     argocd.argoproj.io/hook: PreSync
-    argocd.argoproj.io/hook-delete-policy: HookSucceeded
 spec:
   backoffLimit: 1
   ttlSecondsAfterFinished: 10
