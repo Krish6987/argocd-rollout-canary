@@ -1,0 +1,26 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: normal-job
+  labels:
+    app.kubernetes.io/name: test
+spec:
+  backoffLimit: 1
+  template:
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:latest
+        imagePullPolicy: IfNotPresent
+        command: [ 'sh','-c','printenv']
+        env:
+          - name: NAME
+            value: "Krishna"
+        resources:
+          limits:
+            cpu: 100m
+            memory: 100i
+          requests:
+            cpu: 100m
+            memory: 100Mi
+      restartPolicy: Never
