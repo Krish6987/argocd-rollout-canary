@@ -16,4 +16,6 @@ spec:
         - /bin/sh
         - -c
         - date; echo Hello
+        - sleep 1000
+        - date
       restartPolicy: Never
