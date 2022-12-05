@@ -4,21 +4,15 @@ metadata:
   name: normal-job
 spec:
   backoffLimit: 1
+  ttlSecondsAfterFinished: 10
   template:
     spec:
       containers:
-      - name: nginx
-        image: nginx:latest
+      - name: hello
+        image: busybox:1.28
         imagePullPolicy: IfNotPresent
-        command: [ 'sh','-c','printenv']
-        env:
-          - name: NAME
-            value: "Krishna"
-        resources:
-          limits:
-            cpu: 100m
-            memory: 100i
-          requests:
-            cpu: 100m
-            memory: 100Mi
+        command:
+        - /bin/sh
+        - -c
+        - date; echo Hello from the Kubernetes cluster
       restartPolicy: Never
