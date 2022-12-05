@@ -15,7 +15,5 @@ spec:
         command:
         - /bin/sh
         - -c
-        - date; echo Hello
-        - sleep 1000
-        - date
+        - date; echo Hello this is test
       restartPolicy: Never
