@@ -2,9 +2,12 @@ apiVersion: batch/v1
 kind: Job
 metadata:
   name: normal-job
+  annotations:
+    argocd.argoproj.io/sync-options: Prune=false
 spec:
   backoffLimit: 1
   ttlSecondsAfterFinished: 10
+
   template:
     spec:
       containers:
