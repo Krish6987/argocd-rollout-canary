@@ -2,8 +2,6 @@ apiVersion: batch/v1
 kind: Job
 metadata:
   name: normal-job
-  labels:
-    app.kubernetes.io/name: test
 spec:
   backoffLimit: 1
   template:
