@@ -3,7 +3,7 @@ kind: Job
 metadata:
   name: normal-job
 spec:
-  backoffLimit: 1
+  ttlSecondsAfterFinished: 1
   template:
     spec:
       containers:
@@ -14,4 +14,4 @@ spec:
         - /bin/sh
         - -c
         - date; echo Hello, this is testinggg
-      restartPolicy: Never
+      restartPolicy: OnFailure
