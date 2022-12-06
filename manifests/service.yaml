@@ -6,7 +6,7 @@ metadata:
   name: nginx-svc
 spec:
   ports:
-  - port: 8002
+  - port: 8003
     protocol: TCP
     targetPort: 80
   selector:
