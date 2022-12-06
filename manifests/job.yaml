@@ -3,7 +3,6 @@ kind: Job
 metadata:
   name: normal-job
 spec:
-  ttlSecondsAfterFinished: 10
   backoffLimit: 3
   template:
     spec:
