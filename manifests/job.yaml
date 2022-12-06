@@ -16,4 +16,4 @@ spec:
         - /bin/sh
         - -c
         - date; echo Hello, this is testing
-      restartPolicy: Never
+      restartPolicy: OnFailure
