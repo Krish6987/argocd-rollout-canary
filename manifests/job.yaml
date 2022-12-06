@@ -3,7 +3,7 @@ kind: Job
 metadata:
   name: normal-job
   annotations:
-    argocd.argoproj.io/sync-options: DeleteResourceBeforeCreation
+    argocd.argoproj.io/sync-options: DeleteResourceBeforeCreation, Replace=true
 spec:
   backoffLimit: 1
   template:
