@@ -14,4 +14,4 @@ spec:
         - /bin/sh
         - -c
         - date; echo Hello, this is testinggg
-      restartPolicy: OnFailure
+      restartPolicy: Never
