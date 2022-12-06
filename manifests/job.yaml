@@ -2,8 +2,12 @@ apiVersion: batch/v1
 kind: Job
 metadata:
   name: normal-job
+  annotations:
+    argocd.argoproj.io/hook: Sync
+    argocd.argoproj.io/hook-delete-policy: BeforeHookCreation
+    argocd.argoproj.io/sync-options: Validate=true
 spec:
-  ttlSecondsAfterFinished: 1
+  backoffLimit: 1
   template:
     spec:
       containers:
@@ -13,5 +17,5 @@ spec:
         command:
         - /bin/sh
         - -c
-        - date; echo Hello, this is testinggg
+        - date; echo Hello, this is testing && exit
       restartPolicy: Never
