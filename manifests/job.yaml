@@ -4,6 +4,7 @@ metadata:
   name: normal-job
 spec:
   ttlSecondsAfterFinished: 10
+  backoffLimit: 1
   template:
     spec:
       containers:
