@@ -17,5 +17,5 @@ spec:
         command:
         - /bin/sh
         - -c
-        - date; echo Hello, this is testing && exit
+        - date; echo Hello, this is testing && exit 1
       restartPolicy: Never
