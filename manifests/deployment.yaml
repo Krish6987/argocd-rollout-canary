@@ -19,5 +19,10 @@ spec:
       - image: go-sample-app:alpine
         imagePullPolicy: Never
         name: hello-world
+        env:
+        - name: PORT
+          value: "8081"
+        - name: MESSAGE
+          value: "Hello, this is a test!!"
         ports:
         - containerPort: 80
