@@ -19,6 +19,13 @@ spec:
       - image: go-sample-app:alpine
         imagePullPolicy: Never
         name: hello-world
+        resources:
+          limits:
+            memory: 50m
+            cpu: 100Mi
+          requests:
+            memory: 50m
+            cpu: 100Mi
         env:
         - name: PORT
           value: "8081"
