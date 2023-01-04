@@ -7,7 +7,8 @@ import (
 )
 
 func helloWorld(w http.ResponseWriter, r *http.Request) {
-	message := os.Getenv("MESSAGE")
+	message := os.Getenv("MESSAG")
+
 	fmt.Fprintf(w, message+"\n This is version 2")
 }
 
