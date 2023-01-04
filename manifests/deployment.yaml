@@ -27,7 +27,7 @@ spec:
         app: hello-world
     spec:
       containers:
-      - image: go-sample-app:1.0.0
+      - image: go-sample-app:2.0.0
         imagePullPolicy: Never
         name: hello-world
         resources:
