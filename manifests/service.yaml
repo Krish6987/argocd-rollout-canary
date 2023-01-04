@@ -6,9 +6,10 @@ metadata:
   name: hello-world-svc
 spec:
   ports:
-  - port: 8001
+  - port: 8081
     protocol: TCP
-    targetPort: 80
+    targetPort: 8081
+    name: http
   selector:
     app: hello-world
   type: LoadBalancer
