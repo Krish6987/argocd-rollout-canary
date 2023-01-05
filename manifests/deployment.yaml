@@ -1,10 +1,30 @@
-apiVersion: apps/v1
+apiVersion: argoproj.io/v1alpha1
+kind: Rollout
 metadata:
   labels:
     app: hello-world
   name: hello-world
 spec:
-  replicas: 1
+  strategy:
+    canary:
+      analysis:
+        templates:
+        - templateName: random-fail
+      steps:
+      - setWeight: 10
+      - pause: {duration: 30s}
+      - setWeight: 25
+      - pause: {duration: 30s}
+      - setWeight: 50
+      - pause: {duration: 1m}
+      - setWeight: 60
+      - pause: {duration: 90s}
+      - setWeight: 80
+      - pause: {duration: 90s}
+      - setWeight: 90
+      - pause: {duration: 2m}
+  revisionHistoryLimit: 2
+  replicas: 3
   selector:
     matchLabels:
       app: hello-world
